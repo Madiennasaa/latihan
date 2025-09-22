@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Toko Online</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1607082350899-7e105aa886ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .category-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .category-card:hover {
+            background-color: #f8f9fa;
+            transform: scale(1.05);
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #0d6efd;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-section {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            margin-top: 50px;
+        }
+        
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-shop"></i> TokoOnline
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Product</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" 
+                         data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Transaction</a></li>
+                            <li><a class="dropdown-item" href="#">Report</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                
+                <!-- Cart and User Icons -->
+                <ul class="navbar-nav ms-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="bi bi-cart3"></i> Cart
+                            <span class="badge bg-danger rounded-pill">3</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i> Account
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Login</a></li>
+                            <li><a class="dropdown-item" href="#">Register</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">My Orders</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold">Selamat Datang di Toko Online Kami</h1>
+            <p class="lead">Temukan produk terbaik dengan harga terbaik hanya di sini</p>
+            <a href="#" class="btn btn-primary btn-lg mt-3">Belanja Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4">Kategori Produk</h2>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="category-card">
+                    <i class="bi bi-phone category-icon"></i>
+                    <h5>Elektronik</h5>
+                    <p>Smartphone, Laptop, dan Gadget lainnya</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="category-card">
+                    <i class="bi bi-bag category-icon"></i>
+                    <h5>Fashion</h5>
+                    <p>Pakaian, Sepatu, dan Aksesoris</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="category-card">
+                    <i class="bi bi-house category-icon"></i>
+                    <h5>Rumah Tangga</h5>
+                    <p>Perabotan dan Perlengkapan Rumah</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="category-card">
+                    <i class="bi bi-heart category-icon"></i>
+                    <h5>Kesehatan & Kecantikan</h5>
+                    <p>Produk perawatan tubuh dan kesehatan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="container mb-5">
+        <h2 class="text-center mb-4">Produk Unggulan</h2>
+        <div class="row">
+            <!-- Product 1 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card product-card">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top product-image" alt="Headphone">
+                    <div class="card-body">
+                        <h5 class="card-title">Headphone Wireless</h5>
+                        <p class="card-text">Headphone berkualitas tinggi dengan suara jernih.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary">Rp 499.000</span>
+                            <a href="#" class="btn btn-primary">Beli</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card product-card">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top product-image" alt="Smartwatch">
+                    <div class="card-body">
+                        <h5 class="card-title">Smart Watch</h5>
+                        <p class="card-text">Smartwatch dengan fitur kesehatan dan notifikasi.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary">Rp 899.000</span>
+                            <a href="#" class="btn btn-primary">Beli</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card product-card">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top product-image" alt="Speaker">
+                    <div class="card-body">
+                        <h5 class="card-title">Bluetooth Speaker</h5>
+                        <p class="card-text">Speaker portable dengan suara bass yang kuat.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary">Rp 349.000</span>
+                            <a href="#" class="btn btn-primary">Beli</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card product-card">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="card-img-top product-image" alt="Sepatu">
+                    <div class="card-body">
+                        <h5 class="card-title">Sepatu Olahraga</h5>
+                        <p class="card-text">Sepatu nyaman untuk aktivitas sehari-hari.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 text-primary">Rp 299.000</span>
+                            <a href="#" class="btn btn-primary">Beli</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary">Lihat Semua Produk</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mb-5">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <i class="bi bi-truck feature-icon"></i>
+                <h4>Gratis Ongkir</h4>
+                <p>Gratis ongkos kirim untuk pembelian di atas Rp 500.000</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="bi bi-arrow-clockwise feature-icon"></i>
+                <h4>Pengembalian Mudah</h4>
+                <p>Garansi pengembalian 30 hari untuk semua produk</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <i class="bi bi-shield-check feature-icon"></i>
+                <h4>Pembayaran Aman</h4>
+                <p>Transaksi aman dengan berbagai metode pembayaran</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h3>Berlangganan Newsletter Kami</h3>
+            <p class="mb-4">Dapatkan penawaran khusus dan informasi produk terbaru</p>
+            <form class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Email Anda">
+                        <button class="btn btn-primary" type="submit">Berlangganan</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>TokoOnline</h5>
+                    <p>Platform e-commerce terpercaya dengan berbagai produk berkualitas.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Bantuan</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Pusat Bantuan</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Cara Belanja</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Pengiriman</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Pengembalian</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Tentang Kami</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Tentang TokoOnline</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Karir</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Kontak</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt"></i> Jl. Contoh No. 123, Jakarta</li>
+                        <li><i class="bi bi-telephone"></i> (021) 123-4567</li>
+                        <li><i class="bi bi-envelope"></i> info@tokoonline.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p>&copy; 2023 TokoOnline. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
